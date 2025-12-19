@@ -1,5 +1,5 @@
 from enum import Enum
-
+from app.core.types import binary
 from sqlmodel import Field, SQLModel
 
 
@@ -14,6 +14,7 @@ class ProblemBase(SQLModel):
     title: str = Field(index=True)
     difficulty: Difficulty
     solution_cpp: str | None = None
+    is_solved: binary = Field(default=False)
 
 
 class ProblemCreate(ProblemBase):
