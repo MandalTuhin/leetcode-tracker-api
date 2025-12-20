@@ -15,6 +15,11 @@ The **LeetCode Tracker API** enables users to log problems, store solutions (C++
 - **Data Integrity**: Robust schema validation using **Pydantic** models and **Enums**.
 - **Self-Documenting**: Integrated OpenAPI/Swagger UI for real-time API testing.
 
+## 🌐 Live Deployment
+
+The API is globally accessible and documented via Swagger UI:
+[Interactive API Documentation](https://leetcode-tracker-api.onrender.com/docs)
+
 ## 🛠 Tech Stack
 
 - **Framework**: FastAPI (Python 3.10+)
