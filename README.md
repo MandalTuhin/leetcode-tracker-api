@@ -18,9 +18,9 @@ The **LeetCode Tracker API** enables users to log problems, store solutions (C++
 ## 🌐 Live Deployment
 
 The API is globally accessible and documented via Swagger UI:
-[Interactive API Documentation](https://leetcode-tracker-api.onrender.com/docs)
+[Interactive API Documentation](https://leetcode-tracker-api-production.up.railway.app/docs)
 
-_Note: As this is hosted on a free tier, the initial request may take 30-60 seconds to resolve if the instance is currently spun down._
+_Note: This deployment is hosted on Railway for high availability and performance._
 
 ## 🛠 Tech Stack
 
