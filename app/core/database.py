@@ -1,10 +1,19 @@
+import os
+
 from sqlmodel import Session, SQLModel, create_engine
 
-sqlite_file_name = "database.db"
-sqlite_url = f"sqlite:///{sqlite_file_name}"
+# Use the mount point path defined in Railway (/app/data)
+# Fallback to local 'database.db' if the environment variable is not set
+DATABASE_PATH = os.getenv("DATABASE_URL", "/app/data/database.db")
 
-# echo=True is like a "Debug Mode" - it prints SQL queries to your terminal
-engine = create_engine(sqlite_url, echo=True)
+# Ensure the URL is correctly formatted for SQLite
+if not DATABASE_PATH.startswith("sqlite:///"):
+    sqlite_url = f"sqlite:///{DATABASE_PATH}"
+else:
+    sqlite_url = DATABASE_PATH
+
+# connect_args={"check_same_thread": False} is required for SQLite + FastAPI
+engine = create_engine(sqlite_url, echo=True, connect_args={"check_same_thread": False})
 
 
 def create_db_and_tables():
