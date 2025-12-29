@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.database import create_db_and_tables
-from app.routers import cache, problems
+from app.routers import auth, cache, problems
 
 
 @asynccontextmanager
@@ -34,6 +34,7 @@ app.add_middleware(
 
 app.include_router(problems.router)
 app.include_router(cache.router)
+app.include_router(auth.router)
 
 
 @app.get("/")
